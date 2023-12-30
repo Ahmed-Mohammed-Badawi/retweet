@@ -16,7 +16,7 @@ export default function SelectedArea({className}) {
 
     return (
         <>
-            <Image src={'/assets/home/location.svg'} alt={'location'} width={18} height={18}/>
+            <Image src={'/assets/home/Location.svg'} alt={'location'} width={18} height={18}/>
             <Dropdown
                 value={selectedCity}
                 onChange={(e) => setSelectedCity(e.value)}

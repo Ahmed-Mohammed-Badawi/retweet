@@ -1,5 +1,5 @@
 import SecondaryNavigation from "@/app/components/LayoutAndHomeComponents/SecondaryNavigation/SecondaryNavigation";
-import SignUpSignIn from "@/app/components/AuthenticationComponents/SignUpSignIn/SignUpSignIn";
+import ForgotPassword from "@/app/components/AuthenticationComponents/ForgotPassword/ForgotPassword";
 
 export default function Login() {
     return (
@@ -12,10 +12,15 @@ export default function Login() {
                 },
                 {
                     href: '/auth/login',
-                    text: 'Login',
+                    text: 'Sign In',
+                    arrow: true
                 },
+                {
+                    href: '/auth/forgot-password',
+                    text: 'Forgot Password',
+                }
             ]}/>
-            <SignUpSignIn/>
+            <ForgotPassword/>
         </div>
     );
 }

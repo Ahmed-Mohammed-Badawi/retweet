@@ -3,10 +3,12 @@ import classes from "./Navbar.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import {Button} from "primereact/button";
-import LanguageSwitcher from "@/app/components/LanguageSwitcher/LanguageSwitcher";
-import SelectedArea from "@/app/components/SelectedArea/SelectedArea";
+import LanguageSwitcher from "@/app/components/LayoutAndHomeComponents/LanguageSwitcher/LanguageSwitcher";
+import SelectedArea from "@/app/components/LayoutAndHomeComponents/SelectedArea/SelectedArea";
+import AuthenticatedProfile from "@/app/components/LayoutAndHomeComponents/AuthenticatedProfile/AuthenticatedProfile";
 
 function Navbar({lang}) {
+    const Auth = true;
     return (
         <nav className={classes.Navbar}>
             <div className={classes.Navbar__logo}>
@@ -34,15 +36,17 @@ function Navbar({lang}) {
                     <Button className={classes.Navbar__icons__icon} tooltip={"Notifications"}>
                         <Image src={'/assets/home/notification.svg'} alt={'notification'} width={18} height={18}/>
                     </Button>
+
+                    <span className={classes.Navbar__breaker}></span>
                 </div>
 
-                <span className={classes.Navbar__breaker}></span>
 
                 <div className={classes.Navbar__sign}>
-                    <Button className={classes.Navbar__sign__btn}>
+                    {!Auth && (<Button className={classes.Navbar__sign__btn}>
                         <Image src={'/assets/home/user.svg'} alt={'user'} width={19} height={19}/>
                         <Link href={"/auth/login"}>Sign Up/Sign In</Link>
-                    </Button>
+                    </Button>)}
+                    {Auth && <AuthenticatedProfile lang={lang}/>}
                 </div>
             </div>
 

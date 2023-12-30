@@ -1,7 +1,7 @@
 import SecondaryNavigation from "@/app/components/LayoutAndHomeComponents/SecondaryNavigation/SecondaryNavigation";
-import SignUpSignIn from "@/app/components/AuthenticationComponents/SignUpSignIn/SignUpSignIn";
+import VerifyEmail from "@/app/components/AuthenticationComponents/VerifyEmail/VerifyEmail";
 
-export default function Login() {
+export default function VerifyEmailAddress(){
     return (
         <div className={'w-full'}>
             <SecondaryNavigation arrayOfLinks={[
@@ -12,10 +12,16 @@ export default function Login() {
                 },
                 {
                     href: '/auth/login',
-                    text: 'Login',
+                    text: 'Sign In',
+                    arrow: true
+                },
+                {
+                    href: '/auth/verify',
+                    text: 'Email Verification',
+                    arrow: false
                 },
             ]}/>
-            <SignUpSignIn/>
+            <VerifyEmail />
         </div>
     );
 }

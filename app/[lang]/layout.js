@@ -2,12 +2,14 @@ import {PrimeReactProvider} from 'primereact/api';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import "./globals.css";
 import {defaultLocale} from "@/middleware";
+import { Toaster } from 'react-hot-toast';
 
 
-import Navbar from "../components/Navbar/Navbar";
-import MegaMenu from "@/app/components/MegaMenu/MegaMenu";
-import MainSearchBox from "@/app/components/MainSearchBox/MainSearchBox";
-import Footer from "@/app/components/Footer/Footer";
+import ProgressBarClientContainer from "@/app/components/LayoutAndHomeComponents/ProgressBarClientContainer/ProgressBarClientContainer";
+import Navbar from "../components/LayoutAndHomeComponents/Navbar/Navbar";
+import MegaMenu from "@/app/components/LayoutAndHomeComponents/MegaMenu/MegaMenu";
+import MainSearchBox from "@/app/components/LayoutAndHomeComponents/MainSearchBox/MainSearchBox";
+import Footer from "@/app/components/LayoutAndHomeComponents/Footer/Footer";
 
 export const metadata = {
     title: "Retweet",
@@ -19,13 +21,15 @@ export default function RootLayout({children, params: {lang}}) {
         <html lang={lang || defaultLocale}>
         <body>
         <PrimeReactProvider>
-            <div className={"container min-h-screen"}>
+            <div className={"container"}>
+                <ProgressBarClientContainer/>
                 <Navbar lang={lang}/>
                 <MegaMenu lang={lang}/>
                 <MainSearchBox lang={lang}/>
                 {children}
             </div>
             <Footer lang={lang}/>
+            <Toaster position={'bottom-right'}/>
         </PrimeReactProvider>
         </body>
         </html>

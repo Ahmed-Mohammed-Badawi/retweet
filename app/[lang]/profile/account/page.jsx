@@ -1,9 +1,8 @@
 import SecondaryNavigation from "@/app/components/LayoutAndHomeComponents/SecondaryNavigation/SecondaryNavigation";
-import SignUpSignIn from "@/app/components/AuthenticationComponents/SignUpSignIn/SignUpSignIn";
 
-export default function Login() {
+export default function Account() {
     return (
-        <div className={'w-full'}>
+        <div className={'w-full min-h-screen'}>
             <SecondaryNavigation arrayOfLinks={[
                 {
                     href: '/',
@@ -11,11 +10,11 @@ export default function Login() {
                     arrow: true
                 },
                 {
-                    href: '/auth/login',
-                    text: 'Login',
+                    href: '/profile/account',
+                    text: 'My Account',
+                    arrow: false
                 },
             ]}/>
-            <SignUpSignIn/>
         </div>
-    );
+    )
 }
