@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import classes from "./Navbar.module.scss";
 import Link from "next/link";
@@ -6,8 +7,10 @@ import {Button} from "primereact/button";
 import LanguageSwitcher from "@/app/components/LayoutAndHomeComponents/LanguageSwitcher/LanguageSwitcher";
 import SelectedArea from "@/app/components/LayoutAndHomeComponents/SelectedArea/SelectedArea";
 import AuthenticatedProfile from "@/app/components/LayoutAndHomeComponents/AuthenticatedProfile/AuthenticatedProfile";
+import {useRouter} from "next/navigation";
 
 function Navbar({lang}) {
+    const router = useRouter();
     const Auth = true;
     return (
         <nav className={classes.Navbar}>
@@ -21,7 +24,9 @@ function Navbar({lang}) {
             </div>
             <div className={classes.Navbar_group}>
                 <div className={classes.Navbar__icons}>
-                    <Button className={classes.Navbar__icons__icon} tooltip={"Favourite"}>
+                    <Button className={classes.Navbar__icons__icon} tooltip={"Favourite"} onClick={() => {
+                        router.push('/profile/favourites')
+                    }}>
                         <Image src={'/assets/home/Heart.svg'} alt={'Heart'} width={18} height={18}/>
                     </Button>
 
@@ -33,7 +38,9 @@ function Navbar({lang}) {
 
                     <span className={classes.Navbar__breaker}></span>
 
-                    <Button className={classes.Navbar__icons__icon} tooltip={"Notifications"}>
+                    <Button className={classes.Navbar__icons__icon} tooltip={"Notifications"} onClick={() => {
+                        router.push('/profile/notifications')
+                    }}>
                         <Image src={'/assets/home/notification.svg'} alt={'notification'} width={18} height={18}/>
                     </Button>
 

@@ -1,7 +1,8 @@
 import SecondaryNavigation from "@/app/components/LayoutAndHomeComponents/SecondaryNavigation/SecondaryNavigation";
-import AccountHome from "@/app/components/UserProfileComponents/AccountHome/AccountHome";
+import AccountNotifications from "@/app/components/UserProfileComponents/AccountNotifications/AccountNotifications";
 
-export default function Account({lang}) {
+
+export default function Ads({lang}) {
     console.log(lang)
     return (
         <div className={'w-full min-h-screen'}>
@@ -12,13 +13,13 @@ export default function Account({lang}) {
                     arrow: true
                 },
                 {
-                    href: '/profile/account',
-                    text: 'Profile',
+                    href: '/profile/notifications',
+                    text: 'Notifications',
                     arrow: false
                 },
             ]}/>
             {/*  CONTENT  */}
-            <AccountHome lang={lang}/>
+            <AccountNotifications/>
         </div>
     )
 }

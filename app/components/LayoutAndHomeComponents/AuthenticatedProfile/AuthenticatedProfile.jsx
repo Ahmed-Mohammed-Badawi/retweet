@@ -35,7 +35,7 @@ export default function AuthenticatedProfile({lang}) {
 
                     {/*  USER INFO LINKS */}
                     <div className={classes.Navbar__sign__btn__Links}>
-                        <Link href={"#"} className={classes.Navbar__sign__btn__Links_Link}>
+                        <Link href={"/profile/account"} className={classes.Navbar__sign__btn__Links_Link}>
                             <span className={classes.Navbar__sign__btn__Links_Link__Left}>
                                 <Image src={'/assets/home/dashboard.svg'} alt={'dashboard'} width={20} height={20}/>
                                 <span>Dashboard</span>
@@ -44,7 +44,7 @@ export default function AuthenticatedProfile({lang}) {
                                 <Image src={'/assets/home/ArrowRight.svg'} alt={'ArrowRight'} width={15} height={15}/>
                             </span>
                         </Link>
-                        <Link href={"#"} className={classes.Navbar__sign__btn__Links_Link}>
+                        <Link href={"/profile/notifications"} className={classes.Navbar__sign__btn__Links_Link}>
                             <span className={classes.Navbar__sign__btn__Links_Link__Left}>
                                 <Image src={'/assets/home/notificationAuth.svg'} alt={'dashboard'} width={20} height={20}/>
                                 <span>Notification</span>
@@ -53,16 +53,16 @@ export default function AuthenticatedProfile({lang}) {
                                 <Image src={'/assets/home/ArrowRight.svg'} alt={'ArrowRight'} width={15} height={15}/>
                             </span>
                         </Link>
-                        <Link href={"#"} className={classes.Navbar__sign__btn__Links_Link}>
+                        <Link href={"/profile/ads"} className={classes.Navbar__sign__btn__Links_Link}>
                             <span className={classes.Navbar__sign__btn__Links_Link__Left}>
-                                <Image src={'/assets/home/MyAds.svg'} alt={'dashboard'} width={20} height={20}/>
+                                <Image src={'/assets/home/myAds.svg'} alt={'dashboard'} width={20} height={20}/>
                                 <span>My Ads</span>
                             </span>
                             <span>
                                 <Image src={'/assets/home/ArrowRight.svg'} alt={'ArrowRight'} width={15} height={15}/>
                             </span>
                         </Link>
-                        <Link href={"#"} className={classes.Navbar__sign__btn__Links_Link}>
+                        <Link href={"/profile/settings"} className={classes.Navbar__sign__btn__Links_Link}>
                             <span className={classes.Navbar__sign__btn__Links_Link__Left}>
                                 <Image src={'/assets/home/MyAccount.svg'} alt={'dashboard'} width={20} height={20}/>
                                 <span>My Account</span>
